@@ -27,10 +27,104 @@ h1 {
 
 .input-section, .action-section, .output-section {
     margin-top: 30px;
-    padding: 15px;
-    border: 1px dashed #bdc3c7;
-    border-radius: 5px;
 }
+
+.input-tables-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.input-group {
+   border: 1px solid #dfe6e9;
+   padding: 15px;
+   border-radius: 5px;
+   background-color: #fdfdfd;
+   display: flex;
+   flex-direction: column;
+}
+
+.input-group h3 {
+    margin-top: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px 5px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+th {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+td input[type="text"] {
+    width: 90%;
+    padding: 6px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+td input[type="text"]:focus {
+     outline: none;
+     border-color: #80bdff;
+     box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.add-row-btn, .remove-row-btn {
+    padding: 6px 12px;
+    font-size: 0.85em;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    margin-top: auto;
+}
+
+.add-row-btn {
+     background-color: #28a745;
+     color: white;
+     align-self: flex-start;
+}
+.add-row-btn:hover{
+    background-color: #218838;
+}
+
+.remove-row-btn {
+     background-color: #dc3545;
+     color: white;
+}
+.remove-row-btn:hover {
+    background-color: #c82333;
+}
+
+#detect-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+#detect-btn:hover {
+    background-color: #0056b3;
+}
+
 
 #log, #output {
     margin-top: 15px;
@@ -38,7 +132,10 @@ h1 {
     border: 1px solid #ecf0f1;
     background-color: #f8f9fa;
     border-radius: 4px;
-    min-height: 50px;
+    min-height: 80px;
     font-family: monospace;
+    font-size: 0.9em;
     white-space: pre-wrap;
+    overflow-y: auto;
+    max-height: 300px;
 }
