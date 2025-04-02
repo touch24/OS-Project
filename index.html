@@ -11,31 +11,42 @@
         <h1>Deadlock Detection Tool</h1>
 
         <div class="input-section">
-            <h2>Input Area</h2>
-            <p>(Input fields for allocations and requests will be added here.)</p>
-            <div id="allocation-area">
-                <h3>Resource Allocations (Placeholder)</h3>
-            </div>
-            <div id="request-area">
-                 <h3>Process Requests (Placeholder)</h3>
+            <h2>System State Input</h2>
+            <div class="input-tables-container">
+                <div class="input-group">
+                    <h3>Resource Allocations</h3>
+                    <table id="allocation-table">
+                        <thead>
+                            <tr><th>Resource ID</th><th>Holding Process ID</th><th>Action</th></tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                    <button class="add-row-btn" id="add-alloc-btn">Add Allocation</button>
+                </div>
+                <div class="input-group">
+                     <h3>Process Requests</h3>
+                     <table id="request-table">
+                          <thead>
+                              <tr><th>Waiting Process ID</th><th>Requested Resource ID</th><th>Action</th></tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                     </table>
+                     <button class="add-row-btn" id="add-req-btn">Add Request</button>
+                </div>
             </div>
         </div>
 
         <div class="action-section">
-             <p>(Detection button will go here.)</p>
+             <button id="detect-btn">Detect Deadlock</button>
         </div>
-
 
         <div class="output-section">
-            <h2>Log & Result</h2>
-            <div id="log">
-                Log messages will appear here...
-            </div>
-            <div id="output">
-                Result will appear here...
-            </div>
+            <h2>Detection Log & Result</h2>
+            <div id="log">Log messages will appear here...</div>
+            <div id="output">Result will appear here...</div>
         </div>
-
     </div>
 
     <script src="script.js"></script>
